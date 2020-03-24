@@ -1,0 +1,12 @@
+{% extends 'homepage.html' %}
+{% block main %}
+<h1>CODE MONK BLOGS</h1>
+<hr>
+{% for posts in Post %}
+<hr>
+<h4>BLOG: {{posts.blog}}</h2>
+<h4>AUTHOR: {{posts.author}}</h2>
+<h5>PUBLISHED : {{posts.published}}</h5>
+<hr>
+{% endfor %}
+{% endblock main %}

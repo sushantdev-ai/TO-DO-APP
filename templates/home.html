@@ -1,0 +1,55 @@
+<!doctype html>
+                        <html>
+                            <head>
+                                <meta charset='utf-8'>
+                                <meta name='viewport' content='width=device-width, initial-scale=1'>
+                                <title>Snippet - BBBootstrap</title>
+                                <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'>
+                                <link href='https://use.fontawesome.com/releases/v5.7.2/css/all.css' rel='stylesheet'>
+                                <link rel="stylesheet" href="static/css/main.css">
+                                
+                                
+                            </head>
+<div class="row">
+  <div class="col-md-12">
+      <div class="main-todo-input-wrap">
+          <div class="main-todo-input fl-wrap">
+              <div class="main-todo-input-item"> 
+              <form id="todo-list-item" action="/" method="POST">
+              <input type="text" id="todo" name='todo'placeholder="What will you do today?"> </div> 
+              <div class="main-todo-input-item"> 
+                <input type="text" id="start" name="start" placeholder="Start Time">
+             </div> 
+             <div class="main-todo-input-item"> 
+                <input type="text" id="end" name="end" placeholder="End Time">
+             </div> 
+              <button class="add-items main-search-button" >ADD</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+      <div class="main-todo-input-wrap">
+          <div class="main-todo-input fl-wrap todo-listing">
+              <ul id="list-items">
+              {% for todo in Todo %}
+              <li>
+                <div class="laal">
+                  <hr>
+                  <h4>TO-DO: {{todo.todo}}</h2>
+                  <p>START: {{todo.start}}</p>
+                  <p>END: {{todo.end}}</p>
+                  <a href="/delete/{{todo.num}}">DELETE</a>
+                  <hr>
+                  </div>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+      </div>
+  </div>
+</div>
+                          </body>
+                      </html>
